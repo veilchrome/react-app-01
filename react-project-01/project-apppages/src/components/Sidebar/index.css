@@ -1,0 +1,25 @@
+// Sidebar.jsx
+import React from 'react';
+
+const Sidebar = ({ selectedPage, onPageChange }) => {
+  const pages = ['Home', 'About', 'Contact'];
+
+  return (
+    <div className="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        {pages.map((page) => (
+          <li
+            key={page}
+            className={selectedPage === page ? 'active' : ''}
+            onClick={() => onPageChange(page)}
+          >
+            {page}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Sidebar;
